@@ -11,10 +11,10 @@ class Turn
     @@number_of_turns += 1
     @question = Question.new
     @player_id = @@number_of_turns.odd? ? 1 : 2
-    '----- NEW TURN -----'
   end
   
-  def question_to_player
+  def question_to_player 
+    puts '----- NEW TURN -----'
     @question.ask_question
   end
   

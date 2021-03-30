@@ -9,22 +9,23 @@ puts 'Welcome to TwO-O-Player Math Game!'
 puts 'Please enter a name for Player 1, and then another name for Player 2:'
 # Start game
 game = Game.new(gets.chomp, gets.chomp)
-puts 'Let\'s get this Math Game started!'
+puts "Let's get this Math Game started!"
 
 # Turn loop
 
 
 # Question
-
+turn = Turn.new
+puts turn.question_to_player
 
 # Player answer
-
+turn.player_answer(gets.chomp.to_i)
 
 # Turn evaluate answer
-
+puts turn.turn_response
 
 # Check game stat
-
+puts game.game_stat
 
 # Repeat or game over
 
