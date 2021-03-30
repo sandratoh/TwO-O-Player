@@ -12,20 +12,21 @@ game = Game.new(gets.chomp, gets.chomp)
 puts "Let's get this Math Game started!"
 
 # Turn loop
-
+while game.game_status == 'ongoing_game' do
+  turn = Turn.new
+  puts turn.question_to_player
+  
+  # Player answer
+  turn.player_answer(gets.chomp.to_i)
+  
+  # Turn evaluate answer
+  !turn.answer_correctly? && game.decrease_player_score(turn.player_id)
+  puts turn.turn_response
+  # Check game stat
+  puts game.winner_stat || game.game_stat
+end
 
 # Question
-turn = Turn.new
-puts turn.question_to_player
-
-# Player answer
-turn.player_answer(gets.chomp.to_i)
-
-# Turn evaluate answer
-puts turn.turn_response
-
-# Check game stat
-puts game.game_stat
 
 # Repeat or game over
 

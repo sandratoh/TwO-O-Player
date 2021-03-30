@@ -23,6 +23,7 @@ class Game
 
   def winner_stat
     if self.game_over?
+      self.game_status = 'game_over'
       @player1.is_alive? ?
         winner = @player1 :
         winner = @player2

@@ -15,7 +15,7 @@ class Turn
   
   def question_to_player 
     puts '----- NEW TURN -----'
-    @question.ask_question
+    "Player #{player_id}: #{@question.ask_question}"
   end
   
   def player_answer(input)
@@ -23,14 +23,10 @@ class Turn
   end
 
   def turn_response
-    if self.answer_correctly?
-      "🙌 YES! You got it right!"
-    else
+    self.answer_correctly? ?
+      "🙌 YES! You got it right!" :
       "🤔 Maybe you should retake grade 1 Math..."
-    end
   end
-
-  protected
 
   def answer_correctly?
     @player_answer == @question.sum ? true : false
