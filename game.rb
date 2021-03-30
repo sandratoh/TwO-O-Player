@@ -31,10 +31,28 @@ class Game
     end
   end
 
+  def start
+    puts "Let's get this Math Game started!"
+
+    # Game loop
+    while self.game_status == 'ongoing_game' do
+      turn = Turn.new
+      puts turn.question_to_player
+      
+      # Player answer
+      print '> '
+      turn.player_answer(gets.chomp.to_i)
+      
+      # Evaluate answer and check game stat
+      !turn.answer_correctly? && self.decrease_player_score(turn.player_id)
+      puts turn.turn_response
+      puts self.winner_stat || self.game_stat
+    end
+  end
+
   protected
 
   def game_over?
     @player1.is_alive? && @player2.is_alive? ? false : true
   end
-
 end
