@@ -5,16 +5,11 @@ require './turn'
 
 # Game logic here
 
+puts 'Welcome to TwO-O-Player Math Game!'
+puts 'Please enter a name for Player 1, and then another name for Player 2:'
 # Start game
-
-
-# Enter player 1 name
-
-
-
-# Enter player 2 name
-
-
+game = Game.new(gets.chomp, gets.chomp)
+puts 'Let\'s get this Math Game started!'
 
 # Turn loop
 
