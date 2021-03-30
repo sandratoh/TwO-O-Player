@@ -32,6 +32,19 @@ require './turn'
 # p player2.is_alive?   # => false
 
 # question.rb
-question1 = Question.new
-p question1
-puts question1.ask_question
+# question1 = Question.new
+# p question1
+# puts question1.ask_question
+
+# turn.rb
+turn1 = Turn.new
+p turn1
+p turn1.player_id
+puts turn1.question_to_player
+turn1.player_answer(gets.chomp.to_i)
+puts turn1.answer_correctly?
+
+turn2 = Turn.new
+p turn2
+p turn2.player_id
+# p Turn.total_number_of_turns
