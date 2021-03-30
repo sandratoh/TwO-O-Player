@@ -16,6 +16,7 @@ while game.game_status == 'ongoing_game' do
   puts turn.question_to_player
   
   # Player answer
+  print '> '
   turn.player_answer(gets.chomp.to_i)
   
   # Evaluate answer and check game stat
