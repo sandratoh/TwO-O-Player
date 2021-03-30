@@ -6,8 +6,19 @@ require './turn'
 # Test codes below
 
 # game.rb
-# game = Game.new
-# puts game
+game = Game.new(gets.chomp, gets.chomp)
+p game
+puts game.game_stat
+puts ''
+game.decrease_player_score(1)
+puts game.game_stat
+puts ''
+game.decrease_player_score(2)
+puts game.game_stat
+game.decrease_player_score(2)
+puts game.game_stat
+game.decrease_player_score(2)
+puts game.game_stat
 # puts game.game_status
 # game.game_status = "game_over"
 # puts game.game_status
@@ -37,15 +48,15 @@ require './turn'
 # puts question1.ask_question
 
 # turn.rb
-turn1 = Turn.new
-p turn1
-p turn1.player_id
-puts turn1.question_to_player
-turn1.player_answer(gets.chomp.to_i)
-puts turn1.turn_response
+# turn1 = Turn.new
+# p turn1
+# p turn1.player_id
+# puts turn1.question_to_player
+# turn1.player_answer(gets.chomp.to_i)
+# puts turn1.turn_response
 
-turn2 = Turn.new
-puts turn2.question_to_player
-turn2.player_answer(gets.chomp.to_i)
-puts turn2.turn_response
+# turn2 = Turn.new
+# puts turn2.question_to_player
+# turn2.player_answer(gets.chomp.to_i)
+# puts turn2.turn_response
 # p Turn.total_number_of_turns
