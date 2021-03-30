@@ -26,7 +26,7 @@ class Game
       @player1.is_alive? ?
         winner = @player1 :
         winner = @player2
-      "#{winner.name} wins with a score of #{winner.current_score}/#{MAX_LIVES}!"
+      "#{winner.name} wins with a score of #{winner.current_score}/#{MAX_LIVES}!\n----- GAME OVER -----\nGood bye!"
     end
   end
 
