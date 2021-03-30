@@ -13,6 +13,14 @@ require './turn'
 # puts game.game_status
 
 # player.rb
-player = Player.new("Bob")
-puts player
-puts player.id
+player1 = Player.new(gets.chomp)
+p player1
+puts player1.name
+puts player1.id
+puts player1.current_score
+
+
+player2 = Player.new(gets.chomp)
+p player2
+player2.current_score = 2
+p player2
