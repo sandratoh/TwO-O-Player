@@ -42,9 +42,10 @@ p turn1
 p turn1.player_id
 puts turn1.question_to_player
 turn1.player_answer(gets.chomp.to_i)
-puts turn1.answer_correctly?
+puts turn1.turn_response
 
 turn2 = Turn.new
-p turn2
-p turn2.player_id
+puts turn2.question_to_player
+turn2.player_answer(gets.chomp.to_i)
+puts turn2.turn_response
 # p Turn.total_number_of_turns

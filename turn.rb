@@ -21,6 +21,16 @@ class Turn
   @player_answer = input
   end
 
+  def turn_response
+    if self.answer_correctly?
+      "🙌 YES! You got it right!"
+    else
+      "🤔 Maybe you should retake grade 1 Math..."
+    end
+  end
+
+  protected
+
   def answer_correctly?
     @player_answer == @question.sum ? true : false
   end
