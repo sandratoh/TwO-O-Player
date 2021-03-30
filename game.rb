@@ -1,4 +1,6 @@
 class Game
+  MAX_LIVES = 3
+
   attr_accessor :game_status
 
   def initialize(player1, player2)
@@ -8,10 +10,9 @@ class Game
   end
 
   def game_stat
-    max_lives = 3
     p1_score = @player1.current_score
     p2_score = @player2.current_score
-    "P1: #{p1_score}/#{max_lives} vs P2: #{p2_score}/#{max_lives}"
+    "P1: #{p1_score}/#{MAX_LIVES} vs P2: #{p2_score}/#{MAX_LIVES}"
   end
 
   def decrease_player_score(id)
@@ -22,11 +23,10 @@ class Game
 
   def winner_stat
     if self.game_over?
-      max_lives = 3
       @player1.is_alive? ?
         winner = @player1 :
         winner = @player2
-      "#{winner.name} wins with a score of #{winner.current_score}/#{max_lives}!"
+      "#{winner.name} wins with a score of #{winner.current_score}/#{MAX_LIVES}!"
     end
   end
 
