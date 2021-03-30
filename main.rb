@@ -20,13 +20,18 @@ require './turn'
 # puts player1.current_score
 
 
-player2 = Player.new('bob')
-p player2
+# player2 = Player.new('bob')
+# p player2
 
-player2.current_score = 1
-p player2
-p player2.is_alive?   # => true
+# player2.current_score = 1
+# p player2
+# p player2.is_alive?   # => true
 
-player2.current_score = 0
-p player2
-p player2.is_alive?   # => false
+# player2.current_score = 0
+# p player2
+# p player2.is_alive?   # => false
+
+# question.rb
+question1 = Question.new
+p question1
+puts question1.ask_question
