@@ -10,4 +10,8 @@ class Player
     @id = @@number_of_players
     @current_score = 3
   end
+
+  def is_alive?
+    self.current_score >= 1 ? true : false
+  end
 end
