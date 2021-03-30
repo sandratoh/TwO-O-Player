@@ -19,4 +19,30 @@ class Game
       @player1.current_score -= 1 :
       @player2.current_score -= 1
   end
+
+  def winner_stat
+    if self.game_over?
+      max_lives = 3
+      winner = self.winner?
+      "#{winner.name} wins with a score of #{winner.current_score}/#{max_lives}!"
+    end
+    # if self.game_over?
+    #   @player1.is_alive? ? 
+    #   "#{@player1.name} wins with a score of #{@player1.current_score}/#{max_lives}!" : 
+    #   "#{@player2.name} wins with a score of #{@player2.current_score}/#{max_lives}!"
+    # end
+  end
+
+  protected
+
+  def game_over?
+    @player1.is_alive? && @player2.is_alive? ? false : true
+  end
+
+  def winner?
+    if self.game_over?
+      @player1.is_alive? ? @player1 : @player2
+    end
+  end
+  
 end

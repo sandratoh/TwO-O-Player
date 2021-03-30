@@ -12,13 +12,16 @@ puts game.game_stat
 puts ''
 game.decrease_player_score(1)
 puts game.game_stat
+# puts game.game_over?    # => false
 puts ''
 game.decrease_player_score(2)
 puts game.game_stat
 game.decrease_player_score(2)
 puts game.game_stat
-game.decrease_player_score(2)
-puts game.game_stat
+# game.decrease_player_score(2)
+# puts game.game_stat
+# puts game.game_over?    # => true
+puts game.winner_stat
 # puts game.game_status
 # game.game_status = "game_over"
 # puts game.game_status
