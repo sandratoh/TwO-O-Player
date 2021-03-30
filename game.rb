@@ -26,6 +26,9 @@ class Game
       puts turn.turn_response
       puts self.winner_stat || self.game_stat
     end
+
+    puts '----- GAME OVER -----'
+    puts 'Good bye!'
   end
 
   protected
@@ -48,7 +51,7 @@ class Game
       @player1.is_alive? ?
         winner = @player1 :
         winner = @player2
-      "#{winner.name} wins with a score of #{winner.current_score}/#{MAX_LIVES}!\n----- GAME OVER -----\nGood bye!"
+      "#{winner.name} wins with a score of #{winner.current_score}/#{MAX_LIVES}!"
     end
   end
 

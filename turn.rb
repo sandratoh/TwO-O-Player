@@ -1,10 +1,6 @@
 class Turn
   @@number_of_turns = 0
 
-  def self.total_number_of_turns
-    @@number_of_turns
-  end
-
   attr_accessor :question, :player_id
 
   def initialize
