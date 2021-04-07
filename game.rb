@@ -13,7 +13,7 @@ class Game
     puts "Let's get this Math Game started!"
 
     # Game loop
-    while self.game_status == 'ongoing_game' do
+    while game_status == 'ongoing_game' do
       turn = Turn.new
       puts turn.question_to_player
       
@@ -22,16 +22,16 @@ class Game
       turn.player_answer(gets.chomp.to_i)
       
       # Evaluate answer and check game stat
-      !turn.answer_correctly? && self.decrease_player_score(turn.player_id)
+      !turn.answer_correctly? && decrease_player_score(turn.player_id)
       puts turn.turn_response
-      puts self.winner_stat || self.game_stat
+      puts winner_stat || game_stat
     end
 
     puts '----- GAME OVER -----'
     puts 'Good bye!'
   end
 
-  protected
+  private
 
   def game_stat
     p1_score = @player1.current_score
@@ -46,7 +46,7 @@ class Game
   end
 
   def winner_stat
-    if self.game_over?
+    if game_over?
       self.game_status = 'game_over'
       @player1.is_alive? ?
         winner = @player1 :
